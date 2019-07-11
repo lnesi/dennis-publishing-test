@@ -4,7 +4,7 @@ import PageError from "../components/PageError";
 import PokemonDetails from "../components/PokemonDetails";
 import { Query } from "react-apollo";
 import { gql } from "apollo-boost";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 const PokemonDetailsPage = props => {
   const pageQuery = gql`
@@ -21,6 +21,13 @@ const PokemonDetailsPage = props => {
   `;
   return (
     <div className="PokemonDetailPage">
+      <div className="row">
+        <div className="col-12">
+          <Link to="/" className="btn btn-primary">
+            &lt;&nbsp;Back
+          </Link>
+        </div>
+      </div>
       <div className="row">
         <Query query={pageQuery} variables={{ name: props.match.params.name }}>
           {({ loading, error, data }) => {
