@@ -1,11 +1,11 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 
-const PokemonTile = ({ image, name, number, history }) => (
+export const PokemonTile = ({ image, name, number, history }) => (
   <div
-    className="col-sm-12 col-md-6 col-lg-4 col-xl-2"
+    className="PokemonTile col-sm-12 col-md-6 col-lg-4 col-xl-2"
     onClick={() => {
-      history.push("/detail/" + name);
+      history.push("/details/" + name);
     }}
   >
     <div className="card">
@@ -15,8 +15,8 @@ const PokemonTile = ({ image, name, number, history }) => (
         </div>
         <div className="col-sm-8">
           <div className="card-body">
-            <h5 className="card-title">{number}</h5>
-            <p className="card-text">{name}</p>
+            <h5 className="card-title number">{number}</h5>
+            <p className="card-text name">{name}</p>
           </div>
         </div>
       </div>

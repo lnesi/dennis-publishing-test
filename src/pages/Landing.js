@@ -23,7 +23,7 @@ const LandingPage = props => {
           {({ loading, error, data }) => {
             if (loading) return <PageLoader />;
             if (error) return <PageError />;
-            return <PokemonsList data={data} />;
+            return <PokemonsList list={data.pokemons} />;
           }}
         </Query>
       </div>
@@ -31,8 +31,10 @@ const LandingPage = props => {
   );
 };
 
+
+//There are 151 pokenons on api any number above 151 brings 151 results
 LandingPage.defaultProps = {
-  firstCount: 151
+  firstCount: 251
 };
 
 export default LandingPage;

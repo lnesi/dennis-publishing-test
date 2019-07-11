@@ -10,8 +10,8 @@ const PokemonDetail = ({
 }) => (
   <div className="PokemonDetail jumbotron w-100">
     <h1>
-      {number}&nbsp;
-      <small>{name}</small>
+      <span className="number">{number}</span>&nbsp;
+      <small className="name">{name}</small>
     </h1>
     <hr />
     <p>

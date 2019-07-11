@@ -1,9 +1,9 @@
 import React from "react";
 import PokemonTile from "./PokemonTile.js";
 
-const PokemonsList = ({ data }) => (
+const PokemonsList = ({ list }) => (
   <div className="PokemonsList row">
-    {data.pokemons.map(pokemon => (
+    {list.map(pokemon => (
       <PokemonTile {...pokemon} key={pokemon.number} />
     ))}
   </div>

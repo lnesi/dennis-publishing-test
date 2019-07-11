@@ -12,7 +12,7 @@ function App() {
         <div className="row">
           <div className="col">
             <Route exact path="/" component={LandingPage} />
-            <Route path="/detail/:name" component={PokemonDetailsPage} />
+            <Route path="/details/:name" component={PokemonDetailsPage} />
           </div>
         </div>
       </div>
