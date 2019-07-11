@@ -2,11 +2,10 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import { PokemonTile } from "../PokemonTile";
 
-
 const testData = {
   name: "Wartortle",
   number: "008",
-  image: "https://img.pokemondb.net/artwork/wartortle.jpg",
+  image: "https://img.pokemondb.net/artwork/wartortle.jpg"
 };
 
 const historyMock = {
