@@ -1,29 +1,32 @@
 import React from "react";
 import PageLoader from "../components/PageLoader";
 import PageError from "../components/PageError";
-import PokemonsList from "../components/PokemonsList";
+import PokemonDetails from "../components/PokemonDetails";
 import { Query } from "react-apollo";
 import { gql } from "apollo-boost";
+import { withRouter } from "react-router-dom";
 
-const LandingPage = props => {
+const PokemonDetailsPage = props => {
   const pageQuery = gql`
-    {
-      pokemons(first: ${props.firstCount}) {
+    query getPokemon($name: String!) {
+      pokemon(name: $name) {
         name
         number
         image
+        types
+        resistant
+        weaknesses
       }
     }
   `;
-
   return (
-    <div className="LandingPage">
+    <div className="PokemonDetailPage">
       <div className="row">
-        <Query query={pageQuery}>
+        <Query query={pageQuery} variables={{ name: props.match.params.name }}>
           {({ loading, error, data }) => {
             if (loading) return <PageLoader />;
             if (error) return <PageError />;
-            return <PokemonsList data={data} />;
+            return <PokemonDetails {...data.pokemon} />;
           }}
         </Query>
       </div>
@@ -31,8 +34,4 @@ const LandingPage = props => {
   );
 };
 
-LandingPage.defaultProps = {
-  firstCount: 151
-};
-
-export default LandingPage;
+export default withRouter(PokemonDetailsPage);

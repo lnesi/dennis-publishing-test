@@ -12,7 +12,7 @@ const PokemonTile = ({ image, name, number }) => (
           <div className="card-body">
             <h5 className="card-title">{number}</h5>
             <p className="card-text">{name}</p>
-            <Link to={`/detail/${number}`} className="btn btn-primary">
+            <Link to={`/detail/${name}`} className="btn btn-primary">
               View More
             </Link>
           </div>
