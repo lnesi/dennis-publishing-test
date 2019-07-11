@@ -4,9 +4,9 @@ import { PokemonTile } from "../PokemonTile";
 
 
 const testData = {
-  name: "Jon Doe",
-  number: "001",
-  image: "http://test.com/jhon"
+  name: "Wartortle",
+  number: "008",
+  image: "https://img.pokemondb.net/artwork/wartortle.jpg",
 };
 
 const historyMock = {

@@ -1,6 +1,6 @@
 import React from "react";
 import ListGroup from "./ListGroup";
-const PokemonDetail = ({
+const PokemonDetails = ({
   name,
   number,
   image,
@@ -8,7 +8,7 @@ const PokemonDetail = ({
   resistant,
   weaknesses
 }) => (
-  <div className="PokemonDetail jumbotron w-100">
+  <div className="PokemonDetails jumbotron w-100">
     <h1>
       <span className="number">{number}</span>&nbsp;
       <small className="name">{name}</small>
@@ -23,4 +23,4 @@ const PokemonDetail = ({
   </div>
 );
 
-export default PokemonDetail;
+export default PokemonDetails;
